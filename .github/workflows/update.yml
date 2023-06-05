@@ -6,7 +6,7 @@ on:
 
 jobs:
   check:
-    if: ${{github.repository == 'YT-Advanced/WSA-Script'}}
+    if: ${{github.repository == 'a0533057932/WSA-10-Script'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ♻️
@@ -45,7 +45,7 @@ jobs:
           latestver = html.find("a", string=re.compile("MicrosoftCorporationII\.WindowsSubsystemForAndroid_.*\.msixbundle")).text
           latestver = latestver.replace('MicrosoftCorporationII.WindowsSubsystemForAndroid_', '')
           latestver = latestver.replace('_neutral_~_8wekyb3d8bbwe.msixbundle', '')
-          currentver = requests.get(f"https://raw.githubusercontent.com/YT-Advanced/WSA-Script/update/wsa.appversion").text
+          currentver = requests.get(f"https://raw.githubusercontent.com/a0533057932/WSA-10-Script/update/wsa.appversion").text
           latestver = latestver.replace('\n', '')
           currentver = currentver.replace('\n', '')
           build = False
@@ -57,7 +57,7 @@ jobs:
           file.write(latestver)
           file.close()
           print("Check WSA Insider Version")
-          currentver = requests.get(f"https://raw.githubusercontent.com/YT-Advanced/WSA-Script/update/WIF.appversion").text
+          currentver = requests.get(f"https://raw.githubusercontent.com/a0533057932/WSA-10-Script/update/WIF.appversion").text
           latestver = json.loads(requests.get(f"https://api.github.com/repos/YT-Advanced/WSAPackage/releases/latest").content)['tag_name']
           latestver = latestver.replace('\n', '')
           currentver = currentver.replace('\n', '')
@@ -71,7 +71,7 @@ jobs:
           file.write(latestver)
           file.close()
           print("Check Magisk Stable Version")
-          currentver = requests.get(f"https://raw.githubusercontent.com/YT-Advanced/WSA-Script/update/magisk.appversion").text
+          currentver = requests.get(f"https://raw.githubusercontent.com/a0533057932/WSA-10-Script/update/magisk.appversion").text
           latestver = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/raw/master/stable.json").content)['magisk']['version']
           latestver = latestver.replace('\n', '')
           currentver = currentver.replace('\n', '')
@@ -82,7 +82,7 @@ jobs:
           file.write(latestver)
           file.close()
           print("Check MindTheGapps Version")
-          currentver = requests.get(f"https://raw.githubusercontent.com/YT-Advanced/WSA-Script/update/gapps.appversion").text
+          currentver = requests.get(f"https://raw.githubusercontent.com/a0533057932/WSA-10-Script/update/gapps.appversion").text
           latestver = json.loads(requests.get(f"https://api.github.com/repos/Howard20181/MindTheGappsBuilder/releases/latest").content)['name']
           latestver = latestver.replace('\n', '')
           currentver = currentver.replace('\n', '')
